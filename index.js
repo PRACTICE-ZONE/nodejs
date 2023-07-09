@@ -39,7 +39,7 @@ var server = http.createServer(function(req, res) {
     req.on('end', function(){
       buffer += decoder.end();
       res.end('Hello World\n');
-      console.log('Request received with this payload: ', buffer);
+      console.log('Request received with this payload:', buffer);
     });
 
     // send the response
@@ -49,3 +49,22 @@ var server = http.createServer(function(req, res) {
 server.listen(3000, function() {
     console.log("The server is listening on port 3000 now");
 })
+
+// define the handlers
+var handlers = {};
+
+// sample handler
+handlers.sample = function(data, callback){
+    // callback a http status code, and a payload object
+    callback(406, {'name': 'sample handler'});
+};
+
+// not found handler
+handlers.notFound = function(data, callback){
+    callback(404);
+};
+
+// define a request router
+var router = {
+  'sample': handlers.sample
+}
