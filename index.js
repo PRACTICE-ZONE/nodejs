@@ -38,7 +38,20 @@ var server = http.createServer(function(req, res) {
 
     req.on('end', function(){
       buffer += decoder.end();
-      res.end('Hello World\n');
+
+        // choose the handler this request should go to. If one is not found use the not found handler
+        var chosenHandler = typeof(router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound;
+        // construct the data object to send to the handler
+        var data = {
+            'trimmedPath' : trimmedPath,
+            'queryStringObject' : queryStringObject,
+            'method' : method,
+            'headers' : headers,
+            'payload' : buffer
+        };
+
+        
+        res.end('Hello World\n');
       console.log('Request received with this payload:', buffer);
     });
 
