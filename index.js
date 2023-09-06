@@ -64,7 +64,7 @@ var server = http.createServer(function(req, res) {
             // return the response
             res.writeHead(statusCode);
             res.end(payloadString);
-            console.log('Request received with this payload:', buffer);
+            console.log('Request received with this payload:',statusCode, payloadString, buffer);
         });
 
         res.end('Hello World\n');
