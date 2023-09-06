@@ -64,10 +64,10 @@ var server = http.createServer(function(req, res) {
             // return the response
             res.writeHead(statusCode);
             res.end(payloadString);
+            console.log('Request received with this payload:', buffer);
         });
 
         res.end('Hello World\n');
-      console.log('Request received with this payload:', buffer);
     });
 
     // send the response
