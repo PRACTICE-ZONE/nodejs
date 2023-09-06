@@ -60,10 +60,12 @@ var server = http.createServer(function(req, res) {
 
             // convert the payload to a string
             var payloadString = JSON.stringify(payload);
-            
-        }
 
-        
+            // return the response
+            res.writeHead(statusCode);
+            res.end(payloadString);
+        });
+
         res.end('Hello World\n');
       console.log('Request received with this payload:', buffer);
     });
