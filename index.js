@@ -20,11 +20,11 @@ var server = http.createServer(function(req, res) {
 
     //Get the query string as an object
     var queryStringObject = parsedUrl.query;
-    console.log(queryStringObject)
+    console.log("query string", queryStringObject)
 
     //get the http method
     var method = req.method;
-    console.log("Request received: " + trimmedPath+ "with method: " + method);
+    console.log("Request received: " + trimmedPath + " with method: " + method);
 
     //get the headers as an object
     var headers = req.headers;
