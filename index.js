@@ -41,6 +41,7 @@ var server = http.createServer(function(req, res) {
 
         // choose the handler this request should go to. If one is not found use the not found handler
         var chosenHandler = typeof(router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound;
+       
         // construct the data object to send to the handler
         var data = {
             'trimmedPath' : trimmedPath,
@@ -57,14 +58,12 @@ var server = http.createServer(function(req, res) {
 
             // use the payload called back by the handler, or default to an empty object
             payload = typeof(payload) == 'object' ? payload : {};
-
             // convert the payload to a string
             var payloadString = JSON.stringify(payload);
-
             // return the response
             res.writeHead(statusCode);
             res.end(payloadString);
-            console.log('Request received with this payload:',statusCode, payloadString, buffer);
+            console.log('Request received with this payload:', statusCode, payloadString, buffer);
         });
 
         res.end('Hello World\n');
