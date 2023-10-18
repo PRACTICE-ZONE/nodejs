@@ -38,7 +38,6 @@ var server = http.createServer(function(req, res) {
 
     req.on('end', function(){
       buffer += decoder.end();
-
         // choose the handler this request should go to. If one is not found use the not found handler
         var chosenHandler = typeof(router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound;
         // construct the data object to send to the handler
