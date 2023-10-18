@@ -41,7 +41,6 @@ var server = http.createServer(function(req, res) {
 
         // choose the handler this request should go to. If one is not found use the not found handler
         var chosenHandler = typeof(router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound;
-       
         // construct the data object to send to the handler
         var data = {
             'trimmedPath' : trimmedPath,
