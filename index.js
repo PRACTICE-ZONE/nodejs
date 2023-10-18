@@ -55,7 +55,6 @@ var server = http.createServer(function(req, res) {
         chosenHandler(data, function(statusCode, payload){
             // use the status code called back by the handler, or default to 200
             statusCode = typeof(statusCode) == 'number' ? statusCode : 200;
-
             // use the payload called back by the handler, or default to an empty object
             payload = typeof(payload) == 'object' ? payload : {};
             // convert the payload to a string
@@ -68,7 +67,6 @@ var server = http.createServer(function(req, res) {
 
         res.end('Hello World\n');
     });
-
     // send the response
     res.end("Hellow world I try node js");
 })
