@@ -70,7 +70,7 @@ var server = http.createServer(function(req, res) {
     res.end("Hellow world I try node js");
 })
 
-server.listen(3000, function() {
+server.listen(config.port, function() {
     console.log("The server is listening on port 3000 now");
 })
 
