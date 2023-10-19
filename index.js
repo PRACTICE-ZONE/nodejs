@@ -5,6 +5,7 @@ primary files for the API
 var http = require('http');
 var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
+var config = require('./config');
 
 // server should respond to all request with string
 
