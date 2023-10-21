@@ -14,15 +14,16 @@ var config = require('./config');
 var server = http.createServer(function(req, res) {
     unifiedServer(req, res);
 })
+server.listen(config.httpPort, function() {
+    console.log("The server is listening on port "+ config.httpPort +" in " + config.envName +"  now");
+})
 
 // Instantiate the https server
 var httpsServer = https.createServer(function(req, res){
     unifiedServer(req, res);
 });
 
-server.listen(config.httpPort, function() {
-    console.log("The server is listening on port "+ config.httpPort +" in " + config.envName +"  now");
-})
+
 
 // all the server logic for both the http and https server
 var unifiedServer = function(req, res){
