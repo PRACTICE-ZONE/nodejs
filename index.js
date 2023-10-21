@@ -14,7 +14,7 @@ var server = http.createServer(function(req, res) {
 })
 
 server.listen(config.httpPort, function() {
-    console.log("The server is listening on port "+ config.port +" in " + config.envName +"  now");
+    console.log("The server is listening on port "+ config.httpPort +" in " + config.envName +"  now");
 })
 
 // all the server logic for both the http and https server
