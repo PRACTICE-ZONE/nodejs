@@ -10,8 +10,7 @@ var config = require('./config');
 // server should respond to all request with string
 
 var server = http.createServer(function(req, res) {
-       // send the response
-    res.end("Hellow world I try node js");
+    unifiedServer(req, res);
 })
 
 server.listen(config.port, function() {
