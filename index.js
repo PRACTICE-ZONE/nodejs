@@ -23,6 +23,11 @@ var httpsServer = https.createServer(function(req, res){
     unifiedServer(req, res);
 });
 
+var httpsServerOptions = {
+    'key': fs.readFileSync('./https/key.pem'),
+    'cert': fs.readFileSync('./https/cert.pem')
+};
+
 httpsServer.listen(httpsServerOptions, function(){
     console.log("The server is listening on port "+ config.httpsPort +" in " + config.envName +"  now");
 });
