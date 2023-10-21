@@ -4,11 +4,13 @@ primary files for the API
 
 var http = require('http');
 var url = require('url');
+var https = require('https');
 var StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
 
 // server should respond to all request with string
 
+// instantiate the server
 var server = http.createServer(function(req, res) {
     unifiedServer(req, res);
 })
