@@ -10,10 +10,12 @@ var config = require('./config');
 
 // server should respond to all request with string
 
-// instantiate the server
+// instantiate the http server
 var server = http.createServer(function(req, res) {
     unifiedServer(req, res);
 })
+
+// Instantiate the https server
 
 server.listen(config.httpPort, function() {
     console.log("The server is listening on port "+ config.httpPort +" in " + config.envName +"  now");
