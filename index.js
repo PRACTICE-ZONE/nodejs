@@ -5,6 +5,7 @@ primary files for the API
 var http = require('http');
 var url = require('url');
 var https = require('https');
+var fs = require('fs');
 var StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
 
