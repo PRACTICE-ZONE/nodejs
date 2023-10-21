@@ -16,6 +16,9 @@ var server = http.createServer(function(req, res) {
 })
 
 // Instantiate the https server
+var httpsServer = https.createServer(function(req, res){
+    unifiedServer(req, res);
+});
 
 server.listen(config.httpPort, function() {
     console.log("The server is listening on port "+ config.httpPort +" in " + config.envName +"  now");
