@@ -13,7 +13,7 @@ var server = http.createServer(function(req, res) {
     unifiedServer(req, res);
 })
 
-server.listen(config.port, function() {
+server.listen(config.httpPort, function() {
     console.log("The server is listening on port "+ config.port +" in " + config.envName +"  now");
 })
 
