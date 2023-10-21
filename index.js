@@ -102,6 +102,10 @@ var handlers = {};
 //     callback(406, {'name': 'sample handler'});
 // };
 
+// ping handler
+handlers.ping = function(data, callback){
+    callback(200);
+};
 
 // not found handler
 handlers.notFound = function(data, callback){
