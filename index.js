@@ -26,9 +26,10 @@ var httpsServerOptions = {
 };
 var httpsServer = https.createServer(httpsServerOptions, function(req, res) {
     unifiedServer(req, res);
-}
+});
 
-httpsServer.listen(, function(){
+// start the https server
+httpsServer.listen(config.httpsPort, function() {
     console.log("The server is listening on port "+ config.httpsPort +" in " + config.envName +"  now");
 });
 
